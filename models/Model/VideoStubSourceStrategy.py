@@ -1,9 +1,8 @@
 # <editor-fold desc="Import Typing">
-import re
 from typing import *
 # </editor-fold>
 # <editor-fold desc="Import RX">
-from rx import from_list, range, Observable
+from rx import from_list, range
 from rx.operators import map, to_list, zip
 # </editor-fold>
 # <editor-fold desc="Import Numpy">
@@ -12,13 +11,17 @@ from numpy.core.multiarray import ndarray
 # <editor-fold desc="Import OpenCV">
 import cv2
 # </editor-fold>
+# <editor-fold desc="Import Other Libraries">
+import re
+# </editor-fold>
 
-# <editor-fold desc="Own Classes">
-from models.Model.SourceStrategy import Source
+# <editor-fold desc=" Import Own Classes">
+from models.Model.SourceStrategy import SourceStrategy
 # </editor-fold>
 
 
-class VideoStubSource(Source):
+# noinspection PyMethodMayBeStatic
+class VideoStubSourceStrategy(SourceStrategy):
 
     # <editor-fold desc="Constructor">
     def __init__(self):

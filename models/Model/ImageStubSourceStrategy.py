@@ -8,14 +8,12 @@ from numpy.core.multiarray import ndarray
 import cv2
 # </editor-fold>
 
-# <editor-fold desc="Own Classes">
-from models.Model.SourceStrategy import Source
-
-
+# <editor-fold desc="Import Own Classes">
+from models.Model.SourceStrategy import SourceStrategy
 # </editor-fold>
 
 
-class ImageStubSource(Source):
+class ImageStubSourceStrategy(SourceStrategy):
 
     # <editor-fold desc="Constructor">
     def __init__(self):

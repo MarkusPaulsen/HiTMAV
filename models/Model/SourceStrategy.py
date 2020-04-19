@@ -15,10 +15,12 @@ from numpy.core.multiarray import ndarray
 import os
 # </editor-fold>
 
+# <editor-fold desc="Import Own Classes">
 from models.Model.Image import Image
+# </editor-fold>
 
 
-class Source(ABC):
+class SourceStrategy(ABC):
 
     # <editor-fold desc="Constructor">
     def __init__(self):
