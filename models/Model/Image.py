@@ -1,7 +1,10 @@
+from numpy.core.multiarray import ndarray
+
+
 class Image:
-    def __init__(self, filename: str, height: int, width: int, bw: bool, data: bytes):
-        self.filename: str = filename
-        self.height: int = height
-        self.width: int = width
-        self.bw: bool = bw
-        self.data: bytes = data
+    def __init__(self, image_name: str, image_height: int, image_width: int, image_bw: bool, image_data: ndarray):
+        self.image_name: str = image_name
+        self.image_height: int = image_height
+        self.image_width: int = image_width
+        self.image_bw: bool = image_bw
+        self.image_data: ndarray = image_data
