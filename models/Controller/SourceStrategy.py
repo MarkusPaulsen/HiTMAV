@@ -1,7 +1,8 @@
 # <editor-fold desc="Import Typing">
 from typing import *
 # </editor-fold>
-# </editor-fold># <editor-fold desc="Import Class Type">
+# </editor-fold>#
+# <editor-fold desc="Import Class Type">
 from abc import ABC, abstractmethod
 # </editor-fold>
 # <editor-fold desc="Import RX">
@@ -17,6 +18,8 @@ import os
 
 # <editor-fold desc="Import Own Classes">
 from models.Model.Image import Image
+
+
 # </editor-fold>
 
 
@@ -39,15 +42,15 @@ class SourceStrategy(ABC):
     def return_next_image(self) -> Optional[Image]:
         return (
             None
-            if self._image_store_pointer < 0 or self._image_store_pointer > len(self._image_store)
+            if self._image_store_pointer < 0 or self._image_store_pointer > len(self._image_store) - 1
             else self._image_store[self._image_store_pointer]
         )
 
     def is_next_image(self) -> bool:
         return (
-            True
-            if self._image_store_pointer < 0 or self._image_store_pointer > len(self._image_store)
-            else False
+            False
+            if self._image_store_pointer < 0 or self._image_store_pointer > len(self._image_store) - 1
+            else True
         )
 
     def reset_image_store_pointer(self):
@@ -84,6 +87,7 @@ class SourceStrategy(ABC):
                 image_width=image_width, image_bw=image_bw,
                 image_data=image_data
             )
+
         image_store: List[Image] = (
             from_list(
                 self._get_extension_list()
@@ -97,7 +101,6 @@ class SourceStrategy(ABC):
                     lambda file_name: file_name.endswith(extension)
                 ))
             ))
-
             .pipe(flat_map(
                 lambda file_name: from_list(self._get_image_list(file_name=file_name))
             ))

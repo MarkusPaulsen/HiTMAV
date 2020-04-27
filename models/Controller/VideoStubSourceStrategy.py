@@ -2,6 +2,7 @@
 from typing import *
 # </editor-fold>
 # <editor-fold desc="Import RX">
+from cv2 import VideoCapture
 from rx import from_list, range
 from rx.operators import map, to_list, zip
 # </editor-fold>
@@ -16,7 +17,7 @@ import re
 # </editor-fold>
 
 # <editor-fold desc=" Import Own Classes">
-from models.Model.SourceStrategy import SourceStrategy
+from models.Controller.SourceStrategy import SourceStrategy
 # </editor-fold>
 
 
@@ -36,8 +37,8 @@ class VideoStubSourceStrategy(SourceStrategy):
                 ".flv", ".wmv"]
 
     def _get_image_list(self, file_name: str) -> List[Tuple[str, ndarray]]:
-        video_frame_list = []
-        video = cv2.VideoCapture(file_name)
+        video_frame_list: List[ndarray] = []
+        video: VideoCapture = cv2.VideoCapture(file_name)
         while True:
             next_available, frame = video.read()
             if not next_available:

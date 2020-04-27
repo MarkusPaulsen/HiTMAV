@@ -12,12 +12,12 @@ class SourceLoaderPolicy:
         return self._best_strategy
 
     def update_best_strategy(self):
-        self._best_strategy = "Image Stub"
+        self._best_strategy = "Video Stub"
 
     # </editor-fold>
 
     # <editor-fold desc="Setup methods">
     def _setup_best_strategy(self) -> str:
-        return "Image Stub"
+        return "Video Stub"
 
     # </editor-fold>

@@ -9,7 +9,7 @@ import cv2
 # </editor-fold>
 
 # <editor-fold desc="Import Own Classes">
-from models.Model.SourceStrategy import SourceStrategy
+from models.Controller.SourceStrategy import SourceStrategy
 # </editor-fold>
 
 
