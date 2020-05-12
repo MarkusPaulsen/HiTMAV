@@ -10,6 +10,7 @@ from numpy.core.multiarray import ndarray
 
 from models.Model.Image import Image
 
+# Implemented according to https://github.com/AlfaCodeFlow/Vehicle_Detection-And-Classification
 
 # noinspection PyMethodMayBeStatic
 # noinspection PyShadowingNames
