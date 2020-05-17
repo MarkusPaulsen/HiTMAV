@@ -22,7 +22,7 @@ from models.Controller.SourceStrategy import SourceStrategy
 
 
 # noinspection PyMethodMayBeStatic
-class VideoStubSourceStrategy(SourceStrategy):
+class VideoSourceStrategy(SourceStrategy):
 
     # <editor-fold desc="Constructor">
     def __init__(self):

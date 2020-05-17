@@ -1,10 +1,19 @@
-import math
+# <editor-fold desc="Import Typing">
 from typing import *
+# </editor-fold>
+# <editor-fold desc="Import Other Libraries">
+import math
 import time
+# </editor-fold>
+
+# <editor-fold desc="Import Own Classes">
+from models.Model.Configuration import *
+# </editor-fold>
 
 
 class Vehicle:
 
+    # <editor-fold desc="Constructor">
     def __init__(self,
                  bounding_box_centre_point: Tuple[int, int],
                  bounding_box_frame_points: Tuple[Tuple[int, int], Tuple[int, int]]):
@@ -14,7 +23,9 @@ class Vehicle:
         self._pre_last_position: Optional[Tuple[int, int]] = None
         self._bounding_box_frame_points: Tuple[Tuple[int, int], Tuple[int, int]] = bounding_box_frame_points
         self._time_stamp = time.time()
+    # </editor-fold>
 
+    # <editor-fold desc="Public Interface">
     def get_is_driving_downwards(self) -> Optional[bool]:
         return self._is_driving_downwards
 
@@ -61,14 +72,15 @@ class Vehicle:
     def annotation_colour(self):
         if self._is_driving_downwards is not None:
             if self._is_driving_downwards:
-                return 0, 0, 255
+                return colour_for_downwards_vehicles
             else:
-                return 0, 255, 0
+                return colour_for_upwards_vehicles
         else:
-            return 0, 255, 255
+            return colour_for_undetermined_vehicles
 
     def to_keep(self):
-        if time.time() - self._time_stamp > 1.5:
+        if time.time() - self._time_stamp >= deletion_time:
             return False
         else:
             return True
+    # </editor-fold>

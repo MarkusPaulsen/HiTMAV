@@ -18,8 +18,6 @@ import os
 
 # <editor-fold desc="Import Own Classes">
 from models.Model.Image import Image
-
-
 # </editor-fold>
 
 

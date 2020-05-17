@@ -3,10 +3,10 @@ from typing import *
 # </editor-fold>
 
 # <editor-fold desc="Import Own Classes">
-from models.Controller.ImageStubSourceStrategy import ImageStubSourceStrategy
 from models.Controller.SourceStrategy import SourceStrategy
+from models.Controller.ImageSourceStrategy import ImageStubSourceStrategy
+from models.Controller.VideoSourceStrategy import VideoSourceStrategy
 from models.Controller.SourceLoaderPolicy import SourceLoaderPolicy
-from models.Controller.VideoStubSourceStrategy import VideoStubSourceStrategy
 # </editor-fold>
 
 
@@ -37,13 +37,9 @@ class SourceLoaderContext:
         self._source_loader_policy.update_best_strategy()
         best_strategy: str = self._source_loader_policy.get_best_strategy()
         if best_strategy == "Image":
-            return None
-        elif best_strategy == "Video":
-            return None
-        elif best_strategy == "Image Stub":
             return ImageStubSourceStrategy()
-        elif best_strategy == "Video Stub":
-            return VideoStubSourceStrategy()
+        elif best_strategy == "Video":
+            return VideoSourceStrategy()
         else:
             return None
 

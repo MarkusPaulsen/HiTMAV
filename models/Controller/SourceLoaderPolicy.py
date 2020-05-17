@@ -1,3 +1,7 @@
+# <editor-fold desc="Import Own Classes">
+from models.Model.Configuration import *
+# </editor-fold>
+
 # noinspection PyMethodMayBeStatic
 class SourceLoaderPolicy:
 
@@ -12,12 +16,12 @@ class SourceLoaderPolicy:
         return self._best_strategy
 
     def update_best_strategy(self):
-        self._best_strategy = "Video Stub"
+        self._best_strategy = best_strategy
 
     # </editor-fold>
 
     # <editor-fold desc="Setup methods">
     def _setup_best_strategy(self) -> str:
-        return "Video Stub"
+        return best_strategy
 
     # </editor-fold>
