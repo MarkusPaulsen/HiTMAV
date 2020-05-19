@@ -26,33 +26,12 @@ class SourceStrategy(ABC):
     # <editor-fold desc="Constructor">
     def __init__(self):
         self._image_store: List[Image] = self._setup_image_store()
-        self._image_store_pointer: int = self._setup_image_store_pointer()
 
     # </editor-fold>
 
     # <editor-fold desc="Public interface">
     def get_image_store(self) -> List[Image]:
         return self._image_store
-
-    def get_image_store_pointer(self) -> int:
-        return self._image_store_pointer
-
-    def return_next_image(self) -> Optional[Image]:
-        return (
-            None
-            if self._image_store_pointer < 0 or self._image_store_pointer > len(self._image_store) - 1
-            else self._image_store[self._image_store_pointer]
-        )
-
-    def is_next_image(self) -> bool:
-        return (
-            False
-            if self._image_store_pointer < 0 or self._image_store_pointer > len(self._image_store) - 1
-            else True
-        )
-
-    def reset_image_store_pointer(self):
-        self._image_store_pointer = 0
 
     # </editor-fold>
 
@@ -109,11 +88,5 @@ class SourceStrategy(ABC):
             .run()
         )
         return image_store
-
-    def _setup_image_store_pointer(self) -> int:
-        if len(self._image_store) > 0:
-            return 0
-        else:
-            return -1
 
     # </editor-fold>
