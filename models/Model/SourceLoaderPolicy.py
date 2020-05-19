@@ -1,5 +1,5 @@
 # <editor-fold desc="Import Own Classes">
-from models.Model.Configuration import *
+from models.Controller.Configuration import *
 # </editor-fold>
 
 # noinspection PyMethodMayBeStatic

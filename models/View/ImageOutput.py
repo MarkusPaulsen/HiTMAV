@@ -14,9 +14,9 @@ import cv2
 # </editor-fold>
 
 # <editor-fold desc="Import Own Classes">
-from models.Model.Configuration import *
+from models.Controller.Configuration import *
 # </editor-fold>
-from models.Model.Vehicle import Vehicle
+from models.Controller.Vehicle import Vehicle
 
 
 # noinspection PyMethodMayBeStatic,DuplicatedCode

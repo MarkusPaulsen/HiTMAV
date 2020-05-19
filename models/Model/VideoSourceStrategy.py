@@ -17,7 +17,7 @@ import re
 # </editor-fold>
 
 # <editor-fold desc=" Import Own Classes">
-from models.Controller.SourceStrategy import SourceStrategy
+from models.Model.SourceStrategy import SourceStrategy
 # </editor-fold>
 
 

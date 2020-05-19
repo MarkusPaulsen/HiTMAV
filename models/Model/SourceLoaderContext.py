@@ -3,10 +3,10 @@ from typing import *
 # </editor-fold>
 
 # <editor-fold desc="Import Own Classes">
-from models.Controller.SourceStrategy import SourceStrategy
-from models.Controller.ImageSourceStrategy import ImageStubSourceStrategy
-from models.Controller.VideoSourceStrategy import VideoSourceStrategy
-from models.Controller.SourceLoaderPolicy import SourceLoaderPolicy
+from models.Model.SourceStrategy import SourceStrategy
+from models.Model.ImageSourceStrategy import ImageStubSourceStrategy
+from models.Model.VideoSourceStrategy import VideoSourceStrategy
+from models.Model.SourceLoaderPolicy import SourceLoaderPolicy
 # </editor-fold>
 
 

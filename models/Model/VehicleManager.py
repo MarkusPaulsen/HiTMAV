@@ -7,7 +7,7 @@ from rx.operators import filter, to_list
 # </editor-fold>
 
 # <editor-fold desc="Import Own Classes">
-from models.Model.Vehicle import Vehicle
+from models.Controller.Vehicle import Vehicle
 # </editor-fold>
 
 

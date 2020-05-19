@@ -22,7 +22,7 @@ class Vehicle:
         self._last_position: Optional[Tuple[int, int]] = None
         self._pre_last_position: Optional[Tuple[int, int]] = None
         self._bounding_box_frame_points: Tuple[Tuple[int, int], Tuple[int, int]] = bounding_box_frame_points
-        self._time_stamp = time.time()
+        self._time_stamp: float = time.time()
     # </editor-fold>
 
     # <editor-fold desc="Public Interface">
