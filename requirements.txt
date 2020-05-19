@@ -1,0 +1,3 @@
+numpy
+rx
+cv2

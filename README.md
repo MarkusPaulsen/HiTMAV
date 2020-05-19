@@ -1,2 +1,2 @@
 # HiTMAV
-Highway Traffic Monitoringusing Aerial Vide
+Highway Traffic Monitoring using Aerial Video
