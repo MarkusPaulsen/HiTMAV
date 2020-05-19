@@ -2,7 +2,6 @@
 from typing import *
 # </editor-fold>
 # <editor-fold desc="Import RX">
-from cv2 import VideoCapture
 from rx import from_list, range
 from rx.operators import map, to_list, zip
 # </editor-fold>
@@ -11,6 +10,7 @@ from numpy.core.multiarray import ndarray
 # </editor-fold>
 # <editor-fold desc="Import OpenCV">
 import cv2
+from cv2 import VideoCapture
 # </editor-fold>
 # <editor-fold desc="Import Other Libraries">
 import re

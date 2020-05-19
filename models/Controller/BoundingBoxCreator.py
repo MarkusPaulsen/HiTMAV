@@ -3,7 +3,7 @@ from typing import *
 # </editor-fold>
 # <editor-fold desc="Import RX">
 from rx import from_list
-from rx.operators import map, to_list
+from rx.operators import map, to_list, filter
 # </editor-fold>
 # <editor-fold desc="Import Numpy">
 import numpy
@@ -65,9 +65,12 @@ class BoundingBoxCreator:
         (image, contours, hierarchy) = cv2.findContours(
             self._close_transformation, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE
         )
-        self._contours = contours
         self._bounding_box_centre_points: List[Tuple[int, int]] = (
-            from_list(self._contours)
+            from_list(contours)
+            .pipe(filter(
+                lambda contour:
+                cv2.contourArea(contour) > vehicle_detection_size
+            ))
             .pipe(map(
                 lambda contour:
                 cv2.moments(contour)
@@ -80,7 +83,11 @@ class BoundingBoxCreator:
             .run()
         )
         self._bounding_box_frame_points: List[Tuple[Tuple[int, int], Tuple[int, int]]] = (
-            from_list(self._contours)
+            from_list(contours)
+            .pipe(filter(
+                lambda contour:
+                cv2.contourArea(contour) > vehicle_detection_size
+            ))
             .pipe(map(
                 lambda contour:
                 cv2.boundingRect(contour)
