@@ -13,7 +13,7 @@ from models.Model.SourceStrategy import SourceStrategy
 # </editor-fold>
 
 
-class ImageStubSourceStrategy(SourceStrategy):
+class ImageSourceStrategy(SourceStrategy):
 
     # <editor-fold desc="Constructor">
     def __init__(self):

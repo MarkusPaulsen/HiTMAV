@@ -1,3 +1,6 @@
+# Class inspired (and code partitially taken) from an implementation by the GitHub user AlfaCodeFlow:
+# https://github.com/AlfaCodeFlow/Vehicle_Detection-And-Classification
+
 # <editor-fold desc="Vehicle variables">
 colour_for_downwards_vehicles = 0, 0, 255
 colour_for_upwards_vehicles = 0, 255, 0

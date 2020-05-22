@@ -1,3 +1,6 @@
+# Class inspired (and code partitially taken) from an implementation by the GitHub user AlfaCodeFlow:
+# https://github.com/AlfaCodeFlow/Vehicle_Detection-And-Classification
+
 # <editor-fold desc="Import Typing">
 from typing import *
 # </editor-fold>
