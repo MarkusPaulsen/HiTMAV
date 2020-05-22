@@ -4,7 +4,7 @@ from typing import *
 
 # <editor-fold desc="Import Own Classes">
 from models.Model.SourceStrategy import SourceStrategy
-from models.Model.ImageSourceStrategy import ImageStubSourceStrategy
+from models.Model.ImageSourceStrategy import ImageSourceStrategy
 from models.Model.VideoSourceStrategy import VideoSourceStrategy
 from models.Model.SourceLoaderPolicy import SourceLoaderPolicy
 # </editor-fold>
@@ -37,7 +37,7 @@ class SourceLoaderContext:
         self._source_loader_policy.update_best_strategy()
         best_strategy: str = self._source_loader_policy.get_best_strategy()
         if best_strategy == "Image":
-            return ImageStubSourceStrategy()
+            return ImageSourceStrategy()
         elif best_strategy == "Video":
             return VideoSourceStrategy()
         else:

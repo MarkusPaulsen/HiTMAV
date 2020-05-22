@@ -1,3 +1,6 @@
+# Class inspired (and code partitially taken) from an implementation by the GitHub user AlfaCodeFlow:
+# https://github.com/AlfaCodeFlow/Vehicle_Detection-And-Classification
+
 # <editor-fold desc="Import Typing">
 from typing import *
 # </editor-fold>
@@ -31,7 +34,6 @@ class BoundingBoxCreator:
         self._threshold: Optional[Tuple[float, ndarray]] = None
         self._open_transformation: Optional[ndarray] = None
         self._close_transformation: Optional[ndarray] = None
-        self._contours: List[ndarray] = []
         self._bounding_box_centre_points: List[Tuple[int, int]] = []
         self._bounding_box_frame_points: List[Tuple[Tuple[int, int], Tuple[int, int]]] = []
     # </editor-fold>

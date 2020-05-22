@@ -3,7 +3,7 @@ import cv2
 from models.Controller.Configuration import *
 from models.Model.SourceLoaderContext import SourceLoaderContext
 from models.View.ImageOutput import ImageOutput
-from models.Model.VehicleManager import VehicleManager
+from models.Controller.VehicleManager import VehicleManager
 from models.Controller.BoundingBoxCreator import BoundingBoxCreator
 
 slc: SourceLoaderContext = SourceLoaderContext()
